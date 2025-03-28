@@ -436,4 +436,146 @@ document.addEventListener('DOMContentLoaded', function() {
             copyLinkButton.querySelector('span').textContent = originalText;
         }, 2000);
     });
+
+    // 图片懒加载
+    const lazyImages = document.querySelectorAll('img[data-src]');
+    
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const image = entry.target;
+                    image.src = image.dataset.src;
+                    image.removeAttribute('data-src');
+                    imageObserver.unobserve(image);
+                }
+            });
+        });
+        
+        lazyImages.forEach(image => {
+            imageObserver.observe(image);
+        });
+    } else {
+        // 回退方案
+        lazyImages.forEach(image => {
+            image.src = image.dataset.src;
+            image.removeAttribute('data-src');
+        });
+    }
+
+    // 移动端菜单
+    const header = document.querySelector('header');
+    const mobileMenuToggle = document.createElement('div');
+    mobileMenuToggle.className = 'mobile-menu-toggle';
+    mobileMenuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+    header.appendChild(mobileMenuToggle);
+    
+    const nav = document.querySelector('nav');
+    const closeMenu = document.createElement('div');
+    closeMenu.className = 'close-menu';
+    closeMenu.innerHTML = '<i class="fas fa-times"></i>';
+    nav.appendChild(closeMenu);
+    
+    mobileMenuToggle.addEventListener('click', function() {
+        nav.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
+    
+    closeMenu.addEventListener('click', function() {
+        nav.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    });
+    
+    // 点击导航链接后关闭菜单
+    document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', function() {
+            if (window.innerWidth <= 768) {
+                nav.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    });
+
+    // 搜索功能
+    const searchInput = document.querySelector('.search-input');
+    const searchButton = document.querySelector('.search-button');
+    
+    function performSearch() {
+        const searchTerm = searchInput.value.toLowerCase();
+        
+        toolCards.forEach(card => {
+            const title = card.querySelector('h3').textContent.toLowerCase();
+            const description = card.querySelector('p').textContent.toLowerCase();
+            
+            if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+    
+    searchButton.addEventListener('click', performSearch);
+    
+    searchInput.addEventListener('keyup', function(e) {
+        if (e.key === 'Enter') {
+            performSearch();
+        }
+    });
+
+    // 工具筛选功能
+    const filterButtons = document.querySelectorAll('.filter-button');
+    
+    // 为工具卡片添加类别
+    toolCards[0].dataset.category = 'generation';  // Suno AI
+    toolCards[1].dataset.category = 'editing';     // LALAL.AI
+    toolCards[2].dataset.category = 'mixing';      // LANDR
+    toolCards[3].dataset.category = 'generation';  // Drumloop AI
+    toolCards[4].dataset.category = 'generation';  // Chord AI
+    toolCards[5].dataset.category = 'editing';     // iZotope RX
+    
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // 更新按钮状态
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            
+            const filterValue = this.getAttribute('data-filter');
+            
+            toolCards.forEach(card => {
+                if (filterValue === 'all' || card.dataset.category === filterValue) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    // 添加主题切换功能
+    const themeToggle = document.querySelector('.theme-toggle');
+    const body = document.body;
+    const icon = themeToggle.querySelector('i');
+    
+    // 检查本地存储中的主题偏好
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+        body.classList.add('light-mode');
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+    }
+    
+    themeToggle.addEventListener('click', function() {
+        body.classList.toggle('light-mode');
+        
+        if (body.classList.contains('light-mode')) {
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+            localStorage.setItem('theme', 'light');
+        } else {
+            icon.classList.remove('fa-sun');
+            icon.classList.add('fa-moon');
+            localStorage.setItem('theme', 'dark');
+        }
+    });
 }); 
