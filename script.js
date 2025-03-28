@@ -128,6 +128,57 @@ document.addEventListener('DOMContentLoaded', function() {
         // 工具区域标题
         document.querySelector('.tools-section h2').textContent = translations[lang].tools.title;
         
+        // 关于我们部分 - 使用 translations[lang] 而不是硬编码
+        document.querySelector('.about-header h2').textContent = translations[lang].about.title;
+        document.querySelector('.about-header .subtitle').textContent = translations[lang].about.subtitle;
+        
+        document.querySelector('.about-story h3').textContent = translations[lang].about.story.title;
+        document.querySelector('.about-story p:nth-child(2)').textContent = translations[lang].about.story.p1;
+        document.querySelector('.about-story p:nth-child(3)').textContent = translations[lang].about.story.p2;
+        
+        document.querySelector('.about-mission h3').textContent = translations[lang].about.mission.title;
+        document.querySelector('.about-mission > p').textContent = translations[lang].about.mission.description;
+        
+        document.querySelector('.mission-point:nth-child(1) h4').textContent = translations[lang].about.mission.points.discover.title;
+        document.querySelector('.mission-point:nth-child(1) p').textContent = translations[lang].about.mission.points.discover.description;
+        
+        document.querySelector('.mission-point:nth-child(2) h4').textContent = translations[lang].about.mission.points.innovate.title;
+        document.querySelector('.mission-point:nth-child(2) p').textContent = translations[lang].about.mission.points.innovate.description;
+        
+        document.querySelector('.mission-point:nth-child(3) h4').textContent = translations[lang].about.mission.points.empower.title;
+        document.querySelector('.mission-point:nth-child(3) p').textContent = translations[lang].about.mission.points.empower.description;
+        
+        document.querySelector('.team-section h3').textContent = translations[lang].about.team.title;
+        
+        document.querySelector('.team-member:nth-child(1) h4').textContent = translations[lang].about.team.members.ceo.name;
+        document.querySelector('.team-member:nth-child(1) .member-title').textContent = translations[lang].about.team.members.ceo.title;
+        document.querySelector('.team-member:nth-child(1) .member-bio').textContent = translations[lang].about.team.members.ceo.bio;
+        
+        document.querySelector('.team-member:nth-child(2) h4').textContent = translations[lang].about.team.members.product.name;
+        document.querySelector('.team-member:nth-child(2) .member-title').textContent = translations[lang].about.team.members.product.title;
+        document.querySelector('.team-member:nth-child(2) .member-bio').textContent = translations[lang].about.team.members.product.bio;
+        
+        document.querySelector('.team-member:nth-child(3) h4').textContent = translations[lang].about.team.members.tech.name;
+        document.querySelector('.team-member:nth-child(3) .member-title').textContent = translations[lang].about.team.members.tech.title;
+        document.querySelector('.team-member:nth-child(3) .member-bio').textContent = translations[lang].about.team.members.tech.bio;
+        
+        // 分享部分 - 使用 translations[lang] 而不是硬编码
+        document.querySelector('.share-section h2').textContent = translations[lang].share.title;
+        document.querySelector('.share-section > .share-container > p').textContent = translations[lang].share.subtitle;
+        
+        document.querySelector('.share-button:nth-child(1) span').textContent = translations[lang].share.buttons.twitter;
+        document.querySelector('.share-button:nth-child(2) span').textContent = translations[lang].share.buttons.facebook;
+        document.querySelector('.share-button:nth-child(3) span').textContent = translations[lang].share.buttons.linkedin;
+        document.querySelector('.share-button:nth-child(4) span').textContent = translations[lang].share.buttons.whatsapp;
+        document.querySelector('.share-button.copy-link span').textContent = translations[lang].share.buttons.copyLink;
+        
+        // 更新分享链接中的文本
+        const twitterLink = document.querySelector('.share-button:nth-child(1)');
+        twitterLink.href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(translations[lang].share.twitterText)}&url=https://sonicai.com`;
+        
+        const whatsappLink = document.querySelector('.share-button:nth-child(4)');
+        whatsappLink.href = `https://api.whatsapp.com/send?text=${encodeURIComponent(translations[lang].share.whatsappText)}`;
+        
         // 特色工具区域
         if (lang === 'en') {
             // 英文版特色工具
@@ -212,58 +263,6 @@ document.addEventListener('DOMContentLoaded', function() {
             document.querySelector('.link-group:nth-child(3) ul li:nth-child(3) a').textContent = "Copyright Info";
             
             document.querySelector('.copyright p').textContent = "© 2023 SonicAI. All rights reserved.";
-            
-            // 关于我们部分 - 英文
-            document.querySelector('.about-header h2').textContent = translations.en.about.title;
-            document.querySelector('.about-header .subtitle').textContent = translations.en.about.subtitle;
-            
-            document.querySelector('.about-story h3').textContent = translations.en.about.story.title;
-            document.querySelector('.about-story p:nth-child(2)').textContent = translations.en.about.story.p1;
-            document.querySelector('.about-story p:nth-child(3)').textContent = translations.en.about.story.p2;
-            
-            document.querySelector('.about-mission h3').textContent = translations.en.about.mission.title;
-            document.querySelector('.about-mission > p').textContent = translations.en.about.mission.description;
-            
-            document.querySelector('.mission-point:nth-child(1) h4').textContent = translations.en.about.mission.points.discover.title;
-            document.querySelector('.mission-point:nth-child(1) p').textContent = translations.en.about.mission.points.discover.description;
-            
-            document.querySelector('.mission-point:nth-child(2) h4').textContent = translations.en.about.mission.points.innovate.title;
-            document.querySelector('.mission-point:nth-child(2) p').textContent = translations.en.about.mission.points.innovate.description;
-            
-            document.querySelector('.mission-point:nth-child(3) h4').textContent = translations.en.about.mission.points.empower.title;
-            document.querySelector('.mission-point:nth-child(3) p').textContent = translations.en.about.mission.points.empower.description;
-            
-            document.querySelector('.team-section h3').textContent = translations.en.about.team.title;
-            
-            document.querySelector('.team-member:nth-child(1) h4').textContent = translations.en.about.team.members.ceo.name;
-            document.querySelector('.team-member:nth-child(1) .member-title').textContent = translations.en.about.team.members.ceo.title;
-            document.querySelector('.team-member:nth-child(1) .member-bio').textContent = translations.en.about.team.members.ceo.bio;
-            
-            document.querySelector('.team-member:nth-child(2) h4').textContent = translations.en.about.team.members.product.name;
-            document.querySelector('.team-member:nth-child(2) .member-title').textContent = translations.en.about.team.members.product.title;
-            document.querySelector('.team-member:nth-child(2) .member-bio').textContent = translations.en.about.team.members.product.bio;
-            
-            document.querySelector('.team-member:nth-child(3) h4').textContent = translations.en.about.team.members.tech.name;
-            document.querySelector('.team-member:nth-child(3) .member-title').textContent = translations.en.about.team.members.tech.title;
-            document.querySelector('.team-member:nth-child(3) .member-bio').textContent = translations.en.about.team.members.tech.bio;
-            
-            // 分享部分 - 英文
-            document.querySelector('.share-section h2').textContent = translations.en.share.title;
-            document.querySelector('.share-section > .share-container > p').textContent = translations.en.share.subtitle;
-            
-            document.querySelector('.share-button:nth-child(1) span').textContent = translations.en.share.buttons.twitter;
-            document.querySelector('.share-button:nth-child(2) span').textContent = translations.en.share.buttons.facebook;
-            document.querySelector('.share-button:nth-child(3) span').textContent = translations.en.share.buttons.linkedin;
-            document.querySelector('.share-button:nth-child(4) span').textContent = translations.en.share.buttons.whatsapp;
-            document.querySelector('.share-button.copy-link span').textContent = translations.en.share.buttons.copyLink;
-            
-            // 更新分享链接中的文本
-            const twitterLink = document.querySelector('.share-button:nth-child(1)');
-            twitterLink.href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(translations.en.share.twitterText)}&url=https://sonicai.com`;
-            
-            const whatsappLink = document.querySelector('.share-button:nth-child(4)');
-            whatsappLink.href = `https://api.whatsapp.com/send?text=${encodeURIComponent(translations.en.share.whatsappText)}`;
-            
         } else {
             // 中文版特色工具
             document.querySelector('.featured-content h2').textContent = "本月推荐: Udio AI";
@@ -347,57 +346,6 @@ document.addEventListener('DOMContentLoaded', function() {
             document.querySelector('.link-group:nth-child(3) ul li:nth-child(3) a').textContent = "版权信息";
             
             document.querySelector('.copyright p').textContent = "© 2023 SonicAI. 保留所有权利。";
-            
-            // 关于我们部分 - 中文
-            document.querySelector('.about-header h2').textContent = translations.zh.about.title;
-            document.querySelector('.about-header .subtitle').textContent = translations.zh.about.subtitle;
-            
-            document.querySelector('.about-story h3').textContent = translations.zh.about.story.title;
-            document.querySelector('.about-story p:nth-child(2)').textContent = translations.zh.about.story.p1;
-            document.querySelector('.about-story p:nth-child(3)').textContent = translations.zh.about.story.p2;
-            
-            document.querySelector('.about-mission h3').textContent = translations.zh.about.mission.title;
-            document.querySelector('.about-mission > p').textContent = translations.zh.about.mission.description;
-            
-            document.querySelector('.mission-point:nth-child(1) h4').textContent = translations.zh.about.mission.points.discover.title;
-            document.querySelector('.mission-point:nth-child(1) p').textContent = translations.zh.about.mission.points.discover.description;
-            
-            document.querySelector('.mission-point:nth-child(2) h4').textContent = translations.zh.about.mission.points.innovate.title;
-            document.querySelector('.mission-point:nth-child(2) p').textContent = translations.zh.about.mission.points.innovate.description;
-            
-            document.querySelector('.mission-point:nth-child(3) h4').textContent = translations.zh.about.mission.points.empower.title;
-            document.querySelector('.mission-point:nth-child(3) p').textContent = translations.zh.about.mission.points.empower.description;
-            
-            document.querySelector('.team-section h3').textContent = translations.zh.about.team.title;
-            
-            document.querySelector('.team-member:nth-child(1) h4').textContent = translations.zh.about.team.members.ceo.name;
-            document.querySelector('.team-member:nth-child(1) .member-title').textContent = translations.zh.about.team.members.ceo.title;
-            document.querySelector('.team-member:nth-child(1) .member-bio').textContent = translations.zh.about.team.members.ceo.bio;
-            
-            document.querySelector('.team-member:nth-child(2) h4').textContent = translations.zh.about.team.members.product.name;
-            document.querySelector('.team-member:nth-child(2) .member-title').textContent = translations.zh.about.team.members.product.title;
-            document.querySelector('.team-member:nth-child(2) .member-bio').textContent = translations.zh.about.team.members.product.bio;
-            
-            document.querySelector('.team-member:nth-child(3) h4').textContent = translations.zh.about.team.members.tech.name;
-            document.querySelector('.team-member:nth-child(3) .member-title').textContent = translations.zh.about.team.members.tech.title;
-            document.querySelector('.team-member:nth-child(3) .member-bio').textContent = translations.zh.about.team.members.tech.bio;
-            
-            // 分享部分 - 中文
-            document.querySelector('.share-section h2').textContent = translations.zh.share.title;
-            document.querySelector('.share-section > .share-container > p').textContent = translations.zh.share.subtitle;
-            
-            document.querySelector('.share-button:nth-child(1) span').textContent = translations.zh.share.buttons.twitter;
-            document.querySelector('.share-button:nth-child(2) span').textContent = translations.zh.share.buttons.facebook;
-            document.querySelector('.share-button:nth-child(3) span').textContent = translations.zh.share.buttons.linkedin;
-            document.querySelector('.share-button:nth-child(4) span').textContent = translations.zh.share.buttons.whatsapp;
-            document.querySelector('.share-button.copy-link span').textContent = translations.zh.share.buttons.copyLink;
-            
-            // 更新分享链接中的文本
-            const twitterLink = document.querySelector('.share-button:nth-child(1)');
-            twitterLink.href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(translations.zh.share.twitterText)}&url=https://sonicai.com`;
-            
-            const whatsappLink = document.querySelector('.share-button:nth-child(4)');
-            whatsappLink.href = `https://api.whatsapp.com/send?text=${encodeURIComponent(translations.zh.share.whatsappText)}`;
         }
     }
 
