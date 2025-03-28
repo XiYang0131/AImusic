@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YBVSZS93C"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-6YBVSZS93C');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SonicAI - AI音乐工具聚合平台 | 探索AI音乐创作的无限可能</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="SonicAI汇集全球顶尖AI音乐创作工具，帮助音乐人、制作人和爱好者利用人工智能提升创作效率，释放音乐潜能。">
+    <meta name="keywords" content="AI音乐, 人工智能音乐, 音乐生成, 音乐制作, AI工具, 音乐创作, 音频处理, 人声分离, 混音, 母带处理">
+    <meta property="og:title" content="SonicAI - AI音乐工具聚合平台">
+    <meta property="og:description" content="发现最前沿的AI音乐创作工具，提升您的音乐制作效率和创造力">
+    <meta property="og:image" content="https://sonicai.com/images/og-image.jpg">
+    <meta property="og:url" content="https://sonicai.com">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="SonicAI">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SonicAI - AI音乐工具聚合平台">
+    <meta name="twitter:description" content="发现最前沿的AI音乐创作工具，提升您的音乐制作效率和创造力">
+    <meta name="twitter:image" content="https://sonicai.com/images/twitter-card.jpg">
+    <link rel="canonical" href="https://sonicai.com/">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "SonicAI",
+      "url": "https://sonicai.com",
+      "description": "AI音乐工具聚合平台",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://sonicai.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "SonicAI",
+      "url": "https://sonicai.com",
+      "logo": "https://sonicai.com/images/logo.png",
+      "sameAs": [
+        "https://twitter.com/sonicai",
+        "https://www.facebook.com/sonicaimusic",
+        "https://www.linkedin.com/company/sonicai",
+        "https://www.youtube.com/c/sonicai"
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "SonicAI",
+      "image": "https://sonicai.com/images/logo.jpg",
+      "url": "https://sonicai.com",
+      "telephone": "+86-123-4567-8910",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "科技园路88号",
+        "addressLocality": "北京",
+        "postalCode": "100080",
+        "addressCountry": "CN"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "18:00"
+      }
+    }
+    </script>
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" as="style">
+    <link rel="preload" href="languages.js" as="script">
+    <link rel="preload" href="script.js" as="script">
+    <link rel="alternate" hreflang="zh-CN" href="https://sonicai.com/" />
+    <link rel="alternate" hreflang="en" href="https://sonicai.com/en/" />
+</head>
+<body>
+    <div class="audio-visualizer" aria-hidden="true">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+    
+    <header role="banner">
+        <div class="logo">
+            <i class="fas fa-waveform"></i>
+            <h1>SonicAI</h1>
+        </div>
+        <nav aria-label="breadcrumb" class="breadcrumb">
+            <ol>
+                <li><a href="/">首页</a></li>
+                <li><a href="/tools">工具库</a></li>
+                <li aria-current="page">音乐生成工具</li>
+            </ol>
+        </nav>
+        <div class="language-switch">
+            <button class="lang-btn active" data-lang="zh">中文</button>
+            <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+        <div class="theme-toggle">
+            <i class="fas fa-moon"></i>
+        </div>
+        <div class="search-container">
+            <input type="text" placeholder="搜索AI音乐工具..." class="search-input">
+            <button class="search-button"><i class="fas fa-search"></i></button>
+        </div>
+    </header>
+
+    <main role="main">
+        <section class="hero" id="home" aria-labelledby="hero-title">
+            <div class="hero-content">
+                <h1 id="hero-title">探索AI音乐的无限可能</h1>
+                <p>发现、创作、分享 - 用人工智能重新定义音乐创作</p>
+                <a href="#tools" class="cta-button">开始探索</a>
+            </div>
+        </section>
+
+        <section id="tools" class="tools-section" aria-labelledby="tools-title">
+            <h2 id="tools-title">精选AI音乐工具</h2>
+            <div class="filter-container">
+                <button class="filter-button active" data-filter="all">全部</button>
+                <button class="filter-button" data-filter="generation">生成</button>
+                <button class="filter-button" data-filter="editing">编辑</button>
+                <button class="filter-button" data-filter="mixing">混音</button>
+            </div>
+            <div class="tools-grid">
+                <div class="tool-card" data-category="generation">
+                    <div class="tool-icon"><i class="fas fa-music"></i></div>
+                    <h3>Suno AI</h3>
+                    <p>革命性的AI音乐生成工具，只需简单描述即可创作完整歌曲，包含歌词和人声。适合作曲家、音乐制作人和内容创作者快速生成原创音乐。</p>
+                    <div class="tool-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span>4.5 (128)</span>
+                    </div>
+                    <a href="https://suno.ai" target="_blank" class="tool-link">访问官网</a>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon"><i class="fas fa-microphone"></i></div>
+                    <h3>LALAL.AI</h3>
+                    <p>专业的AI人声分离工具，可提取或移除音乐中的人声、乐器和其他音轨</p>
+                    <div class="tool-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span>4.5 (128)</span>
+                    </div>
+                    <a href="https://www.lalal.ai" target="_blank" class="tool-link">访问官网</a>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon"><i class="fas fa-sliders"></i></div>
+                    <h3>LANDR</h3>
+                    <p>AI驱动的专业混音和母带处理平台，让你的音乐听起来更专业</p>
+                    <div class="tool-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span>4.5 (128)</span>
+                    </div>
+                    <a href="https://www.landr.com" target="_blank" class="tool-link">访问官网</a>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon"><i class="fas fa-drum"></i></div>
+                    <h3>Drumloop AI</h3>
+                    <p>AI鼓点生成器，创建独特的节奏模式和鼓组样本</p>
+                    <div class="tool-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span>4.5 (128)</span>
+                    </div>
+                    <a href="https://www.drumloop.ai" target="_blank" class="tool-link">访问官网</a>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon"><i class="fas fa-guitar"></i></div>
+                    <h3>Chord AI</h3>
+                    <p>智能和弦进行生成工具，帮助音乐创作者找到完美的和声</p>
+                    <div class="tool-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span>4.5 (128)</span>
+                    </div>
+                    <a href="https://chordai.net" target="_blank" class="tool-link">访问官网</a>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon"><i class="fas fa-wand-magic-sparkles"></i></div>
+                    <h3>iZotope RX</h3>
+                    <p>行业领先的AI音频修复工具，消除噪音和瑕疵</p>
+                    <div class="tool-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span>4.5 (128)</span>
+                    </div>
+                    <a href="https://www.izotope.com/en/products/rx.html" target="_blank" class="tool-link">访问官网</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-tool">
+            <div class="featured-content">
+                <h2>本月推荐: Udio AI</h2>
+                <p>Udio AI是一款革命性的AI音乐创作平台，结合了最先进的生成式AI技术。只需描述你想要的音乐风格、情绪和结构，Udio AI就能在几秒钟内为你创作出完整的音乐作品。从电影配乐到流行歌曲，从古典到电子，Udio AI都能胜任。</p>
+                <a href="https://www.udio.com" target="_blank" class="cta-button">免费试用</a>
+            </div>
+            <div class="featured-image">
+                <img src="images/soundful-interface.jpg" alt="Udio AI界面">
+            </div>
+        </section>
+
+        <section class="share-section">
+            <div class="share-container">
+                <h2>分享发现</h2>
+                <p>将这些强大的AI音乐工具分享给你的朋友和同事</p>
+                <div class="share-buttons">
+                    <a href="https://twitter.com/intent/tweet?text=发现了一个超棒的AI音乐工具聚合平台：SonicAI&url=https://sonicai.com" target="_blank" class="share-button">
+                        <i class="fab fa-twitter"></i>
+                        <span>分享到 X</span>
+                    </a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://sonicai.com" target="_blank" class="share-button">
+                        <i class="fab fa-facebook-f"></i>
+                        <span>分享到 Facebook</span>
+                    </a>
+                    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://sonicai.com&title=SonicAI - AI音乐工具聚合平台&summary=发现最前沿的AI音乐创作工具" target="_blank" class="share-button">
+                        <i class="fab fa-linkedin-in"></i>
+                        <span>分享到 LinkedIn</span>
+                    </a>
+                    <a href="https://api.whatsapp.com/send?text=发现了一个超棒的AI音乐工具聚合平台：https://sonicai.com" target="_blank" class="share-button">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>分享到 WhatsApp</span>
+                    </a>
+                    <button class="share-button copy-link">
+                        <i class="fas fa-link"></i>
+                        <span>复制链接</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="about-header">
+                <h2>关于我们</h2>
+                <p class="subtitle">我们致力于通过AI技术革新音乐创作方式</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-story">
+                    <h3>我们的故事</h3>
+                    <p>SonicAI诞生于2022年，由一群热爱音乐和人工智能的技术专家和音乐人共同创立。我们注意到AI在音乐领域的巨大潜力，以及创作者们对于高效、创新工具的需求。</p>
+                    <p>经过一年多的发展，我们已经帮助超过10,000名音乐创作者发现并使用最前沿的AI音乐工具，让创作过程更加高效、有趣且充满可能性。</p>
+                </div>
+                
+                <div class="about-mission">
+                    <h3>我们的使命</h3>
+                    <p>我们的使命是通过精选和推广最优质的AI音乐工具，降低音乐创作的门槛，让更多人能够表达自己的音乐创意。我们相信，AI不是要取代人类创作者，而是作为强大的助手，扩展人类的创造力边界。</p>
+                    <div class="mission-points">
+                        <div class="mission-point">
+                            <i class="fas fa-search"></i>
+                            <h4>发现</h4>
+                            <p>精选全球最优质的AI音乐工具</p>
+                        </div>
+                        <div class="mission-point">
+                            <i class="fas fa-lightbulb"></i>
+                            <h4>创新</h4>
+                            <p>推动音乐创作方式的革新</p>
+                        </div>
+                        <div class="mission-point">
+                            <i class="fas fa-users"></i>
+                            <h4>赋能</h4>
+                            <p>让每个人都能创作专业音乐</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="team-section">
+                <h3>核心团队</h3>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <img src="images/team-1.jpg" alt="陈明 - SonicAI创始人兼CEO" width="200" height="200" loading="lazy">
+                        </div>
+                        <h4>陈明</h4>
+                        <p class="member-title">创始人兼CEO</p>
+                        <p class="member-bio">前谷歌AI研究员，拥有10年音乐制作经验</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <img src="images/team-2.jpg" alt="林小雨 - 产品总监">
+                        </div>
+                        <h4>林小雨</h4>
+                        <p class="member-title">产品总监</p>
+                        <p class="member-bio">音乐学院毕业，5年产品设计经验</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <img src="images/team-3.jpg" alt="王强 - 技术负责人">
+                        </div>
+                        <h4>王强</h4>
+                        <p class="member-title">技术负责人</p>
+                        <p class="member-bio">AI算法专家，曾参与多个音频处理项目</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <h2>用户反馈</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial">
+                    <div class="quote">"这个平台彻底改变了我的音乐创作方式，让我能够在几分钟内完成以前需要几天的工作。"</div>
+                    <div class="author">— 张明，独立音乐人</div>
+                </div>
+                <div class="testimonial">
+                    <div class="quote">"作为一名电影配乐师，AI工具帮助我快速生成创意并探索新的音乐方向。"</div>
+                    <div class="author">— 李华，电影配乐师</div>
+                </div>
+                <div class="testimonial">
+                    <div class="quote">"即使没有专业的音乐背景，我也能创作出令人惊叹的音乐作品。"</div>
+                    <div class="author">— 王芳，业余创作者</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="newsletter">
+            <h2>订阅我们的通讯</h2>
+            <p>获取最新AI音乐工具更新和独家教程</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="输入您的邮箱地址">
+                <button type="submit">订阅</button>
+            </form>
+        </section>
+
+        <section class="faq-section" id="faq">
+            <h2>常见问题</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <h3>什么是AI音乐工具？</h3>
+                    <p>AI音乐工具是利用人工智能技术辅助或自动化音乐创作、编辑和制作过程的软件。这些工具可以生成旋律、和声、节奏，或者帮助处理、混音和母带处理音频。</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>AI创作的音乐有版权问题吗？</h3>
+                    <p>AI创作音乐的版权问题因工具而异。一般来说，使用AI工具生成的内容版权归用户所有，但某些平台可能有特定的使用条款。我们建议在商业使用前查看每个工具的版权政策。</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>我需要音乐背景才能使用这些AI工具吗？</h3>
+                    <p>不一定。许多AI音乐工具设计得非常直观，即使没有音乐理论背景也能使用。当然，有音乐知识会帮助你更精确地指导AI创作出你想要的结果。</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>这些AI工具会取代音乐人吗？</h3>
+                    <p>AI音乐工具更多是作为创作辅助工具，而非替代品。它们可以帮助音乐人克服创作瓶颈、加速工作流程或探索新的创意方向，但人类的创造力、情感表达和艺术判断仍然是不可替代的。</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>这些工具适合专业音乐制作吗？</h3>
+                    <p>是的，许多AI音乐工具已经达到了专业水准，被知名音乐人和制作人在商业项目中使用。不过，不同工具的专业程度各异，我们建议根据具体需求选择合适的工具。</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <i class="fas fa-waveform"></i>
+                <h2>SonicAI</h2>
+            </div>
+            <div class="footer-links">
+                <div class="link-group">
+                    <h3>导航</h3>
+                    <ul>
+                        <li><a href="#home">首页</a></li>
+                        <li><a href="#tools">工具库</a></li>
+                        <li><a href="#about">关于我们</a></li>
+                        <li><a href="#contact">联系方式</a></li>
+                    </ul>
+                </div>
+                <div class="link-group">
+                    <h3>资源</h3>
+                    <ul>
+                        <li><a href="/blog" title="AI音乐创作博客">博客</a></li>
+                        <li><a href="/tutorials" title="AI音乐工具教程">教程</a></li>
+                        <li><a href="/faq" title="常见问题解答">常见问题</a></li>
+                        <li><a href="/support" title="获取支持">支持</a></li>
+                    </ul>
+                </div>
+                <div class="link-group">
+                    <h3>法律</h3>
+                    <ul>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">使用条款</a></li>
+                        <li><a href="#">版权信息</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-weibo"></i></a>
+                <a href="#"><i class="fab fa-weixin"></i></a>
+                <a href="#"><i class="fab fa-bilibili"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 SonicAI. 保留所有权利。</p>
+        </div>
+    </footer>
+
+    <script src="languages.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
